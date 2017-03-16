@@ -7,10 +7,10 @@ new WebpackDevServer(webpack(config), {
   stats: {
     colors: true
   }
-}).listen(8000, 'localhost', function (err) {
+}).listen(3002, 'localhost', function (err) {
   if (err) {
     console.log(err);
   }
 
-  console.log('Listening at localhost:8000');
+  console.log('Listening at localhost:3002');
 });
