@@ -3,7 +3,8 @@ export const addTodo = (text) => {
     return {
         type: 'ADD_TODO',
         id: nextTodoId++,
-        text
+        text,
+        createdAt: new Date().toJSON().slice(0,16).replace(/-/g,'/').replace(/T/g,' ')
     }
 }
 
