@@ -3,7 +3,7 @@ var TestUtils = require('react/lib/ReactTestUtils'); //I like using the Test Uti
 var expect = require('expect');
 import * as actions from '../../src/actions/index';
 
-describe('Actions', () => {
+describe('Tests for actions', () => {
     it('should create a ADD_TODO action', () => {
         const text = "new todo";
         const expectedAction = {
