@@ -3,7 +3,7 @@ var webpack = require('webpack');
 module.exports = function (config) {
     config.set({
         browsers: [ 'Chrome' ], //run in Chrome
-        singleRun: false,
+        singleRun: false, //just run once by default
         frameworks: [ 'mocha' ], //use the mocha test framework
         files: [
             'tests.webpack.js' //just load this file
@@ -19,19 +19,9 @@ module.exports = function (config) {
         webpack: { //kind of a copy of your webpack config
             devtool: 'inline-source-map', //just do inline source maps instead of the default
             module: {
-                //loaders: [
-                //    {
-                //        test: /\.js$/,
-                //        loader: 'babel-loader'
-                //    }
-                //],
-                loaders: [{
-                    test: /\.js$/,
-                    loaders: ['react-hot', 'babel'],
-                    exclude: /node_modules/
-                    //include: __dirname
-                }],
-
+                loaders: [
+                    { test: /\.js$/,  loader: 'babel-loader' }
+                ],
                 postLoaders: [ { //delays coverage til after tests are run, fixing transpiled source coverage error
                     test: /\.js$/,
                     exclude: /(test|node_modules|bower_components)\//,
