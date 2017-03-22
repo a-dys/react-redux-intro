@@ -15,4 +15,24 @@ describe('Actions', () => {
 
         expect(actions.addTodo(text)).toEqual(expectedAction);
     });
+
+    it('should create a SET_VISIBILITY_FILTER action', () => {
+        const filter = "SHOW_ALL";
+        const expectedAction = {
+            type: 'SET_VISIBILITY_FILTER',
+            filter: filter
+        };
+
+        expect(actions.setVisibilityFilter(filter)).toEqual(expectedAction);
+    });
+
+    it('should create a TOGGLE_TODO action', () => {
+        const id = 0;
+        const expectedAction = {
+            type: 'TOGGLE_TODO',
+            id: id
+        };
+
+        expect(actions.toggleTodo(id)).toEqual(expectedAction);
+    });
 });
